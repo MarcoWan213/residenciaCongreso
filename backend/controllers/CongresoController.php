@@ -8,6 +8,8 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
+use yii\data\Pagination;
+
 /**
  * CongresoController implements the CRUD actions for Congreso model.
  */
@@ -115,6 +117,8 @@ class CongresoController extends Controller
 
         return $this->redirect(['index']);
     }
+
+    
 
     /**
      * Finds the Congreso model based on its primary key value.

@@ -32,9 +32,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
             //'idCongreso',
             'nombre',
-            'bienvenida:ntext',
-            'nota:ntext',
-            'objetivos',
+            'bienvenida:html',
+            'nota:html',
+            'objetivos:html',
             //'fech_creacion',
             //'fech_inicio',
             //'fech_fin',

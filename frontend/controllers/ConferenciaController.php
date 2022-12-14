@@ -2,16 +2,16 @@
 
 namespace frontend\controllers;
 
-use app\models\Congreso;
-use app\models\CongresoSearch;
+use app\models\Conferencia;
+use app\models\ConferenciaSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * CongresoController implements the CRUD actions for Congreso model.
+ * ConferenciaController implements the CRUD actions for Conferencia model.
  */
-class CongresoController extends Controller
+class ConferenciaController extends Controller
 {
     /**
      * @inheritDoc
@@ -32,13 +32,13 @@ class CongresoController extends Controller
     }
 
     /**
-     * Lists all Congreso models.
+     * Lists all Conferencia models.
      *
      * @return string
      */
     public function actionIndex()
     {
-        $searchModel = new CongresoSearch();
+        $searchModel = new ConferenciaSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -48,30 +48,30 @@ class CongresoController extends Controller
     }
 
     /**
-     * Displays a single Congreso model.
-     * @param int $idCongreso Id Congreso
+     * Displays a single Conferencia model.
+     * @param int $id_mag Id Mag
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($idCongreso)
+    public function actionView($id_mag)
     {
         return $this->render('view', [
-            'model' => $this->findModel($idCongreso),
+            'model' => $this->findModel($id_mag),
         ]);
     }
 
     /**
-     * Creates a new Congreso model.
+     * Creates a new Conferencia model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
     public function actionCreate()
     {
-        $model = new Congreso();
+        $model = new Conferencia();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'idCongreso' => $model->idCongreso]);
+                return $this->redirect(['view', 'id_mag' => $model->id_mag]);
             }
         } else {
             $model->loadDefaultValues();
@@ -83,18 +83,18 @@ class CongresoController extends Controller
     }
 
     /**
-     * Updates an existing Congreso model.
+     * Updates an existing Conferencia model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param int $idCongreso Id Congreso
+     * @param int $id_mag Id Mag
      * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($idCongreso)
+    public function actionUpdate($id_mag)
     {
-        $model = $this->findModel($idCongreso);
+        $model = $this->findModel($id_mag);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'idCongreso' => $model->idCongreso]);
+            return $this->redirect(['view', 'id_mag' => $model->id_mag]);
         }
 
         return $this->render('update', [
@@ -103,30 +103,29 @@ class CongresoController extends Controller
     }
 
     /**
-     * Deletes an existing Congreso model.
+     * Deletes an existing Conferencia model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param int $idCongreso Id Congreso
+     * @param int $id_mag Id Mag
      * @return \yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($idCongreso)
+    public function actionDelete($id_mag)
     {
-        $this->findModel($idCongreso)->delete();
+        $this->findModel($id_mag)->delete();
 
         return $this->redirect(['index']);
     }
-    
 
     /**
-     * Finds the Congreso model based on its primary key value.
+     * Finds the Conferencia model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param int $idCongreso Id Congreso
-     * @return Congreso the loaded model
+     * @param int $id_mag Id Mag
+     * @return Conferencia the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($idCongreso)
+    protected function findModel($id_mag)
     {
-        if (($model = Congreso::findOne(['idCongreso' => $idCongreso])) !== null) {
+        if (($model = Conferencia::findOne(['id_mag' => $id_mag])) !== null) {
             return $model;
         }
 

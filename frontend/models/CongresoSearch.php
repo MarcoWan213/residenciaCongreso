@@ -18,7 +18,7 @@ class CongresoSearch extends Congreso
     {
         return [
             [['idCongreso'], 'integer'],
-            [['nombre', 'bienvenida', 'nota', 'objetivos', 'fech_creacion', 'fech_inicio', 'fech_fin', 'txt_convocatoria', 'link_convocatoria', 'txt_programa_general', 'link_programa_genral', 'txt_registro_ponencia', 'link_registro_ponencia', 'modalidad', 'img_easychair', 'autorizado', 'publicado', 'estatus'], 'safe'],
+            [['nombre', 'bienvenida', 'nota', 'objetivos', 'fech_creacion', 'fech_inicio', 'fech_fin', 'txt_convocatoria', 'link_convocatoria', 'txt_programa_general', 'link_programa_genral', 'txt_registro_ponencia', 'link_registro_ponencia', 'modalidad', 'img_easychair', 'autorizado', 'publicado'], 'safe'],
         ];
     }
 
@@ -77,8 +77,7 @@ class CongresoSearch extends Congreso
             ->andFilterWhere(['like', 'modalidad', $this->modalidad])
             ->andFilterWhere(['like', 'img_easychair', $this->img_easychair])
             ->andFilterWhere(['like', 'autorizado', $this->autorizado])
-            ->andFilterWhere(['like', 'publicado', $this->publicado])
-            ->andFilterWhere(['like', 'estatus', $this->estatus]);
+            ->andFilterWhere(['like', 'publicado', $this->publicado]);    
 
         return $dataProvider;
     }

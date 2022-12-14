@@ -2,16 +2,39 @@
 
 /** @var yii\web\View $this */
 
+use app\models\Congreso;
+
 $this->title = 'Congreso nacional';
 ?>
-<div class="site-index">
-    <div class="p-5 mb-4 bg-transparent rounded-3">
-        <div class="container-fluid py-5 text-center">
-            <h1 class="display-4">Congratulations!</h1>
-            <p class="fs-5 fw-light">You have successfully created your Yii-powered application.</p>
-            <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+<div>
+    <div class="row">
+        <div class="col-sm-7 p-3 bg-primary text-white">
+            <h1><?= Congreso::imprimirDato('nombre'); ?> </h1>
+        </div>
+        <div class="col-sm-4 p-3 bg-dark text-white">
+            <p style="text-align: center;"><?= Congreso::imprimirDato('nota'); ?> </p>
         </div>
     </div>
 
-    
+
+
+    <h2 style="text-align: center;"><strong>Bienvenidos.</strong></h2>
+    <p><?= Congreso::imprimirDato('bienvenida'); ?></p>
+    <h2 style="text-align: center;"><strong>Congreso.</strong></h2>
+    <div class="et_pb_text_inner">
+        <p style="text-align: center;"><strong>Congreso Regional Universitario: Innovación y Experiencias en </strong><br><strong>Investigación en Tiempos de COVID-19</strong></p>
+        <p style="text-align: justify;">Que se realizará en modalidad virtual del 17 al 31 de octubre del 2021 a través del Tecnológico Nacional de México, Campus Valladolid.</p>
+    </div>
+    <h2 style="text-align: center;"><strong>Objetivos.</strong></h2>
+    <p> <?= Congreso::imprimirDato('objetivos'); ?> </p>
+    <h2 style="text-align: center;">Consulta la convocatoria</h2>
+
+    <p> <?= Congreso::imprimirDato('txt_convocatoria'); ?> </p>
+
+    <h2 style="text-align: center;">Programa general</h2>
+    <p> <?= Congreso::imprimirDato('txt_programa_general'); ?> </p>
+
+    <h2 style="text-align: center;">Registro</h2>
+    <p> <?= Congreso::imprimirDato('txt_registro_ponencia'); ?> </p>
+
 </div>

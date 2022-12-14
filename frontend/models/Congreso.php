@@ -56,7 +56,7 @@ class Congreso extends \yii\db\ActiveRecord
             [['objetivos'], 'string', 'max' => 50],
             [['link_convocatoria', 'link_programa_genral', 'link_registro_ponencia'], 'string', 'max' => 220],
             [['modalidad'], 'string', 'max' => 200],
-            [['img_easychair', 'autorizado', 'publicado','estatus'], 'string', 'max' => 20],
+            [['img_easychair', 'autorizado', 'publicado', 'estatus'], 'string', 'max' => 20],
         ];
     }
 
@@ -137,4 +137,43 @@ class Congreso extends \yii\db\ActiveRecord
     {
         return $this->hasMany(TalleresCursos::class, ['idCongreso' => 'idCongreso']);
     }
+
+    public static function imprimirDato($datoS)
+    {
+        $buscar = (new \yii\db\Query())
+            ->select($datoS)
+            ->from('congreso')
+            ->where("publicado=1");
+        $datos = $buscar->createCommand();
+        $columna = $datos->queryAll();
+        foreach ($columna as $fila) {
+            echo htmlspecialchars($fila[$datoS], ENT_QUOTES, 'UTF-8');
+        }
+    }
+
+    /* public static function htmlDato($datoS)
+    {
+        $buscar = (new \yii\db\Query())
+            ->select($datoS)
+            ->from('congreso')
+            ->where("publicado=1");
+        $datos = $buscar->createCommand();
+        $columna = $datos->queryAll();
+        foreach ($columna as $fila) {            
+            return htmlspecialchars($fila[$datoS], ENT_QUOTES, 'UTF-8');
+        }
+    } */
+    /* <!-- IDEA DE GASPI SUPER EFICAS x100 PARA LA IMPRESION -->
+            <?php
+            $query = Yii::$app->db;
+            $buscar = (new \yii\db\Query())
+                ->select('nombre')
+                ->from('congreso')
+                ->where("estatus=1");
+            $datos = $buscar->createCommand();
+            $columna = $datos->queryAll();
+            foreach ($columna as $fila) {
+                echo htmlspecialchars($fila['nombre'], ENT_QUOTES, 'UTF-8');
+            }
+            ?> */
 }
