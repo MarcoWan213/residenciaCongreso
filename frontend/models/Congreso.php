@@ -137,6 +137,7 @@ class Congreso extends \yii\db\ActiveRecord
     {
         return $this->hasMany(TalleresCursos::class, ['idCongreso' => 'idCongreso']);
     }
+    
 
     public static function imprimirDato($datoS)
     {
@@ -151,7 +152,7 @@ class Congreso extends \yii\db\ActiveRecord
         }
     }
 
-    /* public static function htmlDato($datoS)
+    public static function interpDatoHTML($datoS)
     {
         $buscar = (new \yii\db\Query())
             ->select($datoS)
@@ -159,10 +160,13 @@ class Congreso extends \yii\db\ActiveRecord
             ->where("publicado=1");
         $datos = $buscar->createCommand();
         $columna = $datos->queryAll();
-        foreach ($columna as $fila) {            
-            return htmlspecialchars($fila[$datoS], ENT_QUOTES, 'UTF-8');
+        foreach ($columna as $fila) {
+            $param= htmlspecialchars($fila[$datoS], ENT_QUOTES, 'UTF-8');            
+            $b = html_entity_decode($param);
+            echo $b;
+            /* echo $param; */
         }
-    } */
+    }
     /* <!-- IDEA DE GASPI SUPER EFICAS x100 PARA LA IMPRESION -->
             <?php
             $query = Yii::$app->db;

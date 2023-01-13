@@ -37,6 +37,8 @@ class TallerCurso extends \yii\db\ActiveRecord
             [['idCongreso'], 'integer'],
             [['taller', 'instructror'], 'string', 'max' => 100],
             [['idCongreso'], 'exist', 'skipOnError' => true, 'targetClass' => Congreso::class, 'targetAttribute' => ['idCongreso' => 'idCongreso']],
+            [['fecha_inicio', 'fecha_fin'], 'safe'],
+            [['horas'], 'integer']
         ];
     }
 
@@ -46,12 +48,15 @@ class TallerCurso extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_tall_curs' => 'Id Tall Curs',
+            'id_tall_curs' => 'Numero Taller/Curso',
             'taller' => 'Taller',
-            'descipcion_taller' => 'Descipcion Taller',
+            'descipcion_taller' => 'Descripcion Taller',
+            'fecha_inicio' => 'Fecha de inicio',
+            'fecha_fin' => 'Fecha de fin',
+            'horas' => 'Total de horas',
             'instructror' => 'Instructror',
-            'cvu_instructor' => 'Cvu Instructor',
-            'idCongreso' => 'Id Congreso',
+            'cvu_instructor' => 'CV Instructor',
+            'idCongreso' => 'Congreso Correspondiente',
         ];
     }
 

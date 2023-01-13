@@ -1,6 +1,7 @@
 <?php
 
 use app\models\Congreso;
+use app\models\Miembro;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
@@ -34,10 +35,15 @@ $this->params['breadcrumbs'][] = $this->title;
             'fecha_inicio',
             'fecha_fin',
             'descipcion:html',
-            'responsable',            
-            [   'attribute'=>'idCongreso',
-                'value'=>Congreso::findOne($model->idCongreso)->nombre
-            ],   
+            'responsable',
+            /* [
+                'attribute' => 'responsable',
+                'value' => Miembro::findOne($model->id_miembro)->nombre
+            ], */
+            [
+                'attribute' => 'idCongreso',
+                'value' => Congreso::findOne($model->idCongreso)->nombre
+            ],
         ],
     ]) ?>
 

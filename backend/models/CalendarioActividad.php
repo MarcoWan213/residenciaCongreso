@@ -47,12 +47,12 @@ class CalendarioActividad extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_evento' => 'Id Evento',
-            'fecha_inicio' => 'Fecha Inicio',
-            'fecha_fin' => 'Fecha Fin',
-            'descipcion' => 'Descipcion',
+            'id_evento' => 'N° de evento',
+            'fecha_inicio' => 'Fecha de inicio',
+            'fecha_fin' => 'Fecha de fin',
+            'descipcion' => 'Descripcion',
             'responsable' => 'Responsable',
-            'idCongreso' => 'Id Congreso',
+            'idCongreso' => 'Congreso Correspondiente',
         ];
     }
 

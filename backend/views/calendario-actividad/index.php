@@ -10,7 +10,7 @@ use yii\grid\GridView;
 /** @var app\models\CalendarioActividadSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Calendario Actividads';
+$this->title = 'Calendario de Actividades';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="calendario-actividad-index">
@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Calendario Actividad', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear Actividad', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -30,10 +30,10 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             //'id_evento',
+            'descipcion:html',
             'fecha_inicio',
             'fecha_fin',
-            'descipcion:html',
-            'responsable',
+            //'responsable',
             //'idCongreso',
             [
                 'class' => ActionColumn::className(),

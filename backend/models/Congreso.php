@@ -50,10 +50,9 @@ class Congreso extends \yii\db\ActiveRecord
     {
         return [
             [['nombre', 'bienvenida', 'fech_creacion', 'fech_inicio'], 'required'],
-            [['bienvenida', 'nota', 'txt_convocatoria', 'txt_programa_general', 'txt_registro_ponencia'], 'string'],
+            [['bienvenida', 'nota', 'objetivos', 'txt_convocatoria', 'txt_programa_general', 'txt_registro_ponencia'], 'string'],
             [['fech_creacion', 'fech_inicio', 'fech_fin'], 'safe'],
             [['nombre'], 'string', 'max' => 100],
-            [['objetivos'], 'string', 'max' => 50],
             [['link_convocatoria', 'link_programa_genral', 'link_registro_ponencia'], 'string', 'max' => 220],
             [['modalidad'], 'string', 'max' => 200],
             [['img_easychair', 'autorizado', 'publicado'], 'string', 'max' => 20],

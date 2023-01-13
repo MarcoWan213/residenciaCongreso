@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var app\models\Colaborador $model */
 
-$this->title = 'Create Colaborador';
-$this->params['breadcrumbs'][] = ['label' => 'Colaboradors', 'url' => ['index']];
+$this->title = 'Crear Nuevo Colaborador';
+$this->params['breadcrumbs'][] = ['label' => 'Colaborador', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="colaborador-create">

@@ -6,35 +6,65 @@ use app\models\Congreso;
 
 $this->title = 'Congreso nacional';
 ?>
+
+<style>
+    h2 {
+        font: normal normal normal 25px/1 Helvetica, arial, sans-serif;
+        border-bottom: 2px solid #000;
+        background: grey;
+        color: #fff;
+        text-align: center;
+        height: 40px;
+        padding: 10px 15px;
+    }
+
+    h2:after {
+        /* the line under H2 */
+        left: 0px;
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 5px;
+        margin-top: 2px;
+        content: " ";
+        background: #0070ff;
+    }
+
+    p {
+        text-align: justify;
+    }
+</style>
 <div>
-    <div class="row">
-        <div class="col-sm-7 p-3 bg-primary text-white">
-            <h1><?= Congreso::imprimirDato('nombre'); ?> </h1>
-        </div>
-        <div class="col-sm-4 p-3 bg-dark text-white">
-            <p style="text-align: center;"><?= Congreso::imprimirDato('nota'); ?> </p>
-        </div>
-    </div>
 
-
-
-    <h2 style="text-align: center;"><strong>Bienvenidos.</strong></h2>
-    <p><?= Congreso::imprimirDato('bienvenida'); ?></p>
+    <h2><strong>Bienvenidos.</strong></h2>
+    <p><?= Congreso::interpDatoHTML('bienvenida'); ?></p>
     <h2 style="text-align: center;"><strong>Congreso.</strong></h2>
-    <div class="et_pb_text_inner">
-        <p style="text-align: center;"><strong>Congreso Regional Universitario: Innovación y Experiencias en </strong><br><strong>Investigación en Tiempos de COVID-19</strong></p>
-        <p style="text-align: justify;">Que se realizará en modalidad virtual del 17 al 31 de octubre del 2021 a través del Tecnológico Nacional de México, Campus Valladolid.</p>
-    </div>
-    <h2 style="text-align: center;"><strong>Objetivos.</strong></h2>
-    <p> <?= Congreso::imprimirDato('objetivos'); ?> </p>
-    <h2 style="text-align: center;">Consulta la convocatoria</h2>
+    <p>
+        Congreso que se celebrara a partir del dia:
+        <?= Congreso::interpDatoHTML('fech_inicio'); ?> <br>
+        Y terminara el dia:
+        <?= Congreso::interpDatoHTML('fech_fin'); ?> <br>
+        Mediante la modialida:
+        <?= Congreso::interpDatoHTML('modalidad'); ?> <br>
+    </p>
+    <h2><strong>Objetivos.</strong></h2>
+    <p> <?= Congreso::interpDatoHTML('objetivos'); ?> </p>
 
-    <p> <?= Congreso::imprimirDato('txt_convocatoria'); ?> </p>
+    <h2><strong>Consulta la convocatoria</strong></h2> <!-- //Seccion convocatoria -->
+    <p> <?= Congreso::interpDatoHTML('txt_convocatoria'); ?> </p>
+    <a href="<?= Congreso::interpDatoHTML('link_convocatoria'); ?>" class="button button-ind"> CONVOCATORIA </a>
+    <br><br>
 
-    <h2 style="text-align: center;">Programa general</h2>
-    <p> <?= Congreso::imprimirDato('txt_programa_general'); ?> </p>
 
-    <h2 style="text-align: center;">Registro</h2>
-    <p> <?= Congreso::imprimirDato('txt_registro_ponencia'); ?> </p>
+    <h2><strong>Programa general</strong></h2> <!-- //seccion programa_general -->
+    <p> <?= Congreso::interpDatoHTML('txt_programa_general'); ?> </p>
+    <a href="<?= Congreso::interpDatoHTML('link_programa_genral'); ?>" class="button button-ind"> PROGRAMA </a>
+    <br><br>
+
+
+    <h2><strong>Registro</strong></h2> <!-- seccion _registro_ponencia -->
+    <p> <?= Congreso::interpDatoHTML('txt_registro_ponencia'); ?> </p>
+    <a href="<?= Congreso::interpDatoHTML('link_registro_ponencia'); ?>" class="button button-ind"> REGISTRO </a>    
+    <br><br>
 
 </div>

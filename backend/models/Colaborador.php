@@ -19,7 +19,6 @@ use Yii;
  */
 class Colaborador extends \yii\db\ActiveRecord
 {
-    public $archivo;
     /**
      * {@inheritdoc}
      */
@@ -38,7 +37,7 @@ class Colaborador extends \yii\db\ActiveRecord
             [['idCongreso'], 'integer'],
             [['nombre', 'enlace'], 'string', 'max' => 100],
             [['link', /* 'logotipo' */], 'string', 'max' => 200],/* sigue estando la variable logotivo luego la usaremos  */
-            [['archivo'], 'file', 'extensions' => 'jpg,png,'],
+            [['logotipo'], 'string'],
             [['telefono'], 'string', 'max' => 15],
             [['idCongreso'], 'exist', 'skipOnError' => true, 'targetClass' => Congreso::class, 'targetAttribute' => ['idCongreso' => 'idCongreso']],
         ];
@@ -50,13 +49,13 @@ class Colaborador extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_colavorador' => 'Id Colavorador',
+            'id_colavorador' => 'Numero de colavorador',
             'nombre' => 'Nombre',
             'enlace' => 'Enlace',
-            'link' => 'Link',
+            'link' => 'Sitio Web',
             'telefono' => 'Telefono',
-            'archivo' => 'Logotipo',
-            'idCongreso' => 'Id Congreso',
+            'logotipo' => 'Logo',
+            'idCongreso' => 'Congreso Correspondiente',
         ];
     }
 

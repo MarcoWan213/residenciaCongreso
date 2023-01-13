@@ -7,9 +7,8 @@ $this->title = 'Congreso Nacional Generador';
 <div class="site-index">
 
     <div class="jumbotron text-center bg-transparent">
-        <h1 class="display-4">Generador Congreso Nacional 2022 !</h1>
+        <br><h1 class="display-4">Generador Congreso Nacional</h1><br><br>
 
-        <p class="lead">Por Wan Martinez.</p>
 
         <p><a class="btn btn-lg btn-success" href="http://localhost/residenciaCongreso/backend/web/index.php?r=congreso">Congreso Generador</a></p>
     </div>

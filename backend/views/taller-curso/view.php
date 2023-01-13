@@ -1,5 +1,6 @@
 <?php
 
+use app\models\Congreso;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
@@ -16,11 +17,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id_tall_curs' => $model->id_tall_curs], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id_tall_curs' => $model->id_tall_curs], [
+        <?= Html::a('Actualizar', ['update', 'id_tall_curs' => $model->id_tall_curs], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Eliminar', ['delete', 'id_tall_curs' => $model->id_tall_curs], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => '¿Esta seguro que desea eliminar este Taller/Curso?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -32,9 +33,14 @@ $this->params['breadcrumbs'][] = $this->title;
             'id_tall_curs',
             'taller',
             'descipcion_taller:html',
+            'fecha_inicio',
+            'fecha_fin',
+            'horas',
             'instructror',
             'cvu_instructor:ntext',
-            'idCongreso',
+            [   'attribute'=>'idCongreso',
+                'value'=>Congreso::findOne($model->idCongreso)->nombre
+            ], 
         ],
     ]) ?>
 

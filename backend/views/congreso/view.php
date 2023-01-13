@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'nombre',
             'bienvenida:html',
             'nota:html',
-            'objetivos',
+            'objetivos:html',
             'fech_creacion',
             'fech_inicio',
             'fech_fin',

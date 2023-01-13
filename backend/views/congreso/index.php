@@ -10,12 +10,13 @@ use yii\grid\GridView;
 /** @var app\models\CongresoSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Congresos';
+$this->title = 'Congresos (Es imperativo que solo este publicado y vigente un congreso.)';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="congreso-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
+    <h2>Para publicar un Congreso edite y active el campo Publicado</h2>
 
     <p>
         <?= Html::a('Create Congreso', ['create'], ['class' => 'btn btn-success']) ?>
@@ -47,7 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //'modalidad',
             //'img_easychair',
             //'autorizado',
-            //'publicado',
+            'publicado',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Congreso $model, $key, $index, $column) {

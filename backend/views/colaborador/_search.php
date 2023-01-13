@@ -24,8 +24,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'link') ?>
 
     <?= $form->field($model, 'telefono') ?>
-
-    <?php // echo $form->field($model, 'logotipo') ?>
+    
+    <?= $form->field($model, 'logotipo') ?>
 
     <?php // echo $form->field($model, 'idCongreso') ?>
 

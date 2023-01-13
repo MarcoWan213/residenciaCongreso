@@ -1,4 +1,4 @@
-6<?php
+<?php
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
@@ -16,11 +16,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id_colavorador' => $model->id_colavorador], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id_colavorador' => $model->id_colavorador], [
+        <?= Html::a('Actualizar', ['update', 'id_colavorador' => $model->id_colavorador], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Eliminar', ['delete', 'id_colavorador' => $model->id_colavorador], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => '¿Esta seguro que desea eliminar este Taller/Curso?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -34,20 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'enlace',
             'link',
             'telefono',
-            [
-                'attribute' => 'logotipo',
-                'format' => 'raw',
-                'value' => function ($data) {
-                    if (!is_null($data->logotipo)) {
-                        return Html::img(
-                            Yii::getAlias('@imageurl/') . $data->logotipo,
-                            ['style' => 'width:120px; height:auto; display: block; margin:auto']
-                        );
-                    } else {
-                        return 'vacio';
-                    }
-                }
-            ],
+            'logotipo:html',            
             'idCongreso',
         ],
     ]) ?>

@@ -14,6 +14,13 @@ use dosamigos\tinymce\TinyMce;
 
     <?php $form = ActiveForm::begin(); ?>
 
+    <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
+    <h1>
+        <?= $form->field($model, 'publicado')->checkbox(['value' => true]) ?>
+    </h1>
+
+
+
     <?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'bienvenida')->widget(TinyMce::className(), [
@@ -27,7 +34,7 @@ use dosamigos\tinymce\TinyMce;
             ],
             'toolbar' => "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
         ]
-    ]) 
+    ])
     ?>
 
     <?= $form->field($model, 'nota')->widget(TinyMce::className(), [
@@ -41,7 +48,7 @@ use dosamigos\tinymce\TinyMce;
             ],
             'toolbar' => "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
         ]
-    ]) 
+    ])
     ?>
 
     <?= $form->field($model, 'objetivos')->widget(TinyMce::className(), [
@@ -55,9 +62,9 @@ use dosamigos\tinymce\TinyMce;
             ],
             'toolbar' => "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
         ]
-    ]) 
+    ])
     ?>
-    
+
 
     <?= $form->field($model, 'fech_creacion')->widget(
         DatePicker::className(),
@@ -105,7 +112,7 @@ use dosamigos\tinymce\TinyMce;
             ],
             'toolbar' => "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
         ]
-    ]) 
+    ])
     ?>
 
     <?= $form->field($model, 'link_convocatoria')->textInput(['maxlength' => true]) ?>
@@ -121,11 +128,11 @@ use dosamigos\tinymce\TinyMce;
             ],
             'toolbar' => "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
         ]
-    ]) 
+    ])
     ?>
 
     <?= $form->field($model, 'link_programa_genral')->textInput(['maxlength' => true]) ?>
-    
+
     <?= $form->field($model, 'txt_registro_ponencia')->widget(TinyMce::className(), [
         'options' => ['rows' => 6],
         'language' => 'es',
@@ -137,7 +144,7 @@ use dosamigos\tinymce\TinyMce;
             ],
             'toolbar' => "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
         ]
-    ]) 
+    ])
     ?>
 
     <?= $form->field($model, 'link_registro_ponencia')->textInput(['maxlength' => true]) ?>
@@ -148,10 +155,8 @@ use dosamigos\tinymce\TinyMce;
 
     <?= $form->field($model, 'autorizado')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'publicado')->textInput(['maxlength' => true]) ?>
-
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

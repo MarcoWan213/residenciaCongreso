@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
 
-    <h2 style="text-align: center;"><strong>Bienvenidos.</strong></h2>
+    <h2 style="text-align: center; background: grey;"><strong>Bienvenidos.</strong></h2>
     <p><?= Congreso::imprimirDato('bienvenida'); ?></p>
     <h2 style="text-align: center;"><strong>Congreso.</strong></h2>
     <div class="et_pb_text_inner">

@@ -35,10 +35,11 @@ AppAsset::register($this);
         ],
     ]);
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'Colaboradores', 'url' => ['/colaborador']],
+        ['label' => 'Inicio', 'url' => ['/site/index']],
+        ['label' => 'Congreso', 'url' => ['/congreso']],
         ['label' => 'Talleres', 'url' => ['/taller-curso']],
         ['label' => 'Calendario', 'url' => ['/calendario-actividad']],
+        ['label' => 'Colaboradores', 'url' => ['/colaborador']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
@@ -71,12 +72,6 @@ AppAsset::register($this);
     </div>
 </main>
 
-<footer class="footer mt-auto py-3 text-muted">
-    <div class="container">
-        <p class="float-start">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
-        <p class="float-end"><?= Yii::powered() ?></p>
-    </div>
-</footer>
 
 <?php $this->endBody() ?>
 </body>

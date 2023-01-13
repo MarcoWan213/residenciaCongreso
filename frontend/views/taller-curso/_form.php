@@ -4,6 +4,7 @@ use app\models\Congreso;
 use dosamigos\tinymce\TinyMce;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
+use yii\jui\DatePicker;
 use yii\widgets\ActiveForm;
 
 /** @var yii\web\View $this */
@@ -31,11 +32,22 @@ use yii\widgets\ActiveForm;
     ]) 
     ?>
 
-    <?= $form->field($model, 'instructror')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'instructror')->textInput(['maxlength' => true]) ?>    
 
     <?= $form->field($model, 'cvu_instructor')->textarea(['rows' => 6]) ?><!-- Subir archivo tipo pdf -->
 
     <?= $form->field($model, 'idCongreso')->dropDownList( ArrayHelper::map(Congreso::find()->all(),'idCongreso','nombre')) ?>
+
+    <?= $form->field($model, 'fecha_inicio')->widget(
+        DatePicker::className(),
+        [
+            'dateFormat' => 'yyyy-MM-dd',
+            'clientOptions' => [
+                'yearRange' => '-115:+10',
+                'changeYear' => true
+            ]
+        ]
+    ) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
