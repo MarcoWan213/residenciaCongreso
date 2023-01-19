@@ -70,36 +70,17 @@ class ColaboradorController extends Controller
     {
         $model = new Colaborador();
 
-        if ($model->load($this->request->post())) {
-
-            $fileULI = UploadedFile::getInstance($model, 'logotipo');
-
-
-            if (empty($fileULI)) // || empty($fileULI2) || empty($fileULI3)) {  //No hay imagenes
-            {
-                $model->logotipo = 'logotipo.gif';
-                $model->save();
+        if ($this->request->isPost) {
+            if ($model->load($this->request->post()) && $model->save()) {
                 return $this->redirect(['view', 'id_colavorador' => $model->id_colavorador]);
-            } else {
-                $model->logotipo = 'logotipo_' . $model->id_colavorador . '.' . $fileULI->extension;
-                //$model->logotipo = 'uploads/' . $model->logotipo. '.' . $fileULI->extension;
-
-                if ($model->save()) {
-                    //$model->logotipo = 'logotipo_' . $model->id_colavorador . '.' . $fileULI->extension;
-
-                    //$model->save();
-                    $rutaArchivo = 'uploads/' . time() . "_" . $fileULI->baseName . "." . $fileULI->extension;
-                    //$fileULI->saveAs('uploads/' . $model->logotipo);
-                    $fileULI->saveAs($rutaArchivo);
-
-                    return $this->redirect(['view', 'id_colavorador' => $model->id_colavorador]);
-                }
             }
         } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
+            $model->loadDefaultValues();
         }
+
+        return $this->render('create', [
+            'model' => $model,
+        ]);
     }
 
     /**

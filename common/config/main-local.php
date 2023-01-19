@@ -4,9 +4,9 @@ return [
     'components' => [
         'db' => [
             'class' => \yii\db\Connection::class,
-            'dsn' => 'mysql:host=crui;dbname=congresonacional',
-            'username' => 'crui',
-            'password' => 'crui2023',
+            'dsn' => 'mysql:host=localhost;dbname=congresonacional',
+            'username' => 'root',
+            'password' => '',
             'charset' => 'utf8',
         ],
         'mailer' => [

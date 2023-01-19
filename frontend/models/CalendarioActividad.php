@@ -59,29 +59,5 @@ class CalendarioActividad extends \yii\db\ActiveRecord
             echo ("$count"), (":- "), $b;
             $count = $count + 1;
         }
-    }
-    public static function imprimirElemento()
-    {
-        $ciclos = Congreso::find()->where(['publicado' => '1'])->all();
-        foreach ($ciclos as $ciclo) {           
-            $id =  $ciclo->idCongreso; //atributos
-            $talleres = ModelsCalendarioActividad::find()->where(['idCongreso' => $ciclo->idCongreso])->all();
-            foreach ($talleres as $taller) {
-                echo "<br>";
-                echo "<hr class= dotted >";
-                echo "Actividad : ";
-                echo $taller->descipcion . "<br>";
-                echo "<hr class= dotted >";
-                echo "<br>";
-                echo "Fecha de inicio:  ";
-                echo $taller->fecha_inicio;
-                echo "<br>";
-                echo "Fecha de fin: ";
-                echo $taller->fecha_fin . "<br>";
-                echo "<br>";
-                echo "<hr class= solid>";
-                echo "<br>";
-            }
-        }
-    }
+    }    
 }

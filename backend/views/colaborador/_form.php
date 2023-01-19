@@ -22,7 +22,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'link')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'telefono')->textInput(['maxlength' => true]) ?>
-
+    <br>
+    <?php echo "Se recomienda redimencionar las imagenes en este campo a 160px x 160px" ?>
     <?= $form->field($model, 'logotipo')->widget(TinyMce::className(), [
         'options' => ['rows' => 6],
         'language' => 'es',

@@ -51,7 +51,7 @@ class Colaborador extends \yii\db\ActiveRecord
         return [
             'id_colavorador' => 'Numero de colavorador',
             'nombre' => 'Nombre',
-            'enlace' => 'Enlace',
+            'enlace' => 'Nombre del enlace responsable',
             'link' => 'Sitio Web',
             'telefono' => 'Telefono',
             'logotipo' => 'Logo',

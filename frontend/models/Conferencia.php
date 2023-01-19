@@ -65,39 +65,6 @@ class Conferencia extends \yii\db\ActiveRecord
             echo $b;
             /* echo $param; */
         }
-    }
-
-    public static function imprimirElemento()
-    {
-        $ciclos = Congreso::find()->where(['publicado' => '1'])->all();
-        foreach ($ciclos as $ciclo) {           
-            $id =  $ciclo->idCongreso; //atributos
-            $talleres = ModelsConferencia::find()->where(['idCongreso' => $ciclo->idCongreso])->all();
-            foreach ($talleres as $taller) {
-                echo "<br>";
-                echo "<hr class= dotted >";
-                echo "Nombre del Taller : ";
-                echo $taller->nombre . "<br>";
-                echo "<hr class= dotted >";
-                echo "<br>";
-                echo "Ponente :  ";
-                echo $taller->nombre_ponente;
-                echo "<br>";
-                echo "Fecha : ";
-                echo $taller->fecha . "<br>";
-                echo "Hora de inicio : ";
-                echo $taller->hora . "<br>";
-                echo "Hora de fin : ";
-                echo $taller->horario . "<br>";
-                echo "Ubicacion : ";
-                echo $taller->lugar . "<br>";
-                echo "Enlace : ";
-                echo $taller->link . "<br>";
-                echo "<br>";
-                echo "<hr class= solid>";
-                echo "<br>";
-            }
-        }
-    }
+    }    
     
 }

@@ -17,7 +17,8 @@ AppAsset::register($this);
 
 <style>
     nav.navbar {
-        background-color: #0070ff;
+        color: #fff;   
+        background-color: #fff;       
     }
 </style>
 
@@ -45,7 +46,7 @@ AppAsset::register($this);
             /* 'brandLabel' => Yii::$app->name, */
             'brandUrl' => Yii::$app->homeUrl,
             'options' => [
-                'class' => 'navbar navbar-expand-md fixed-top',
+                'class' => 'navbar navbar-expand-md fixed-top ',
             ],
         ]);
         $menuItems = [
